@@ -132,8 +132,8 @@ public class JobData {
 
         for (HashMap<String, String> job : allJobs) {
             for (Map.Entry<String, String> i : job.entrySet()) {
-                String aValue = i.getValue();
-                if (aValue.contains(x)) {
+                String aValue = i.getValue().toUpperCase();
+                if (aValue.contains(x.toUpperCase())) {
                     results.add(job);
                 }
             }
