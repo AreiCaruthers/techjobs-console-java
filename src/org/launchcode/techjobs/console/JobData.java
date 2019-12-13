@@ -131,10 +131,14 @@ public class JobData {
         ArrayList<HashMap<String, String>> results = new ArrayList<>();
 
         for (HashMap<String, String> job : allJobs) {
+
             for (Map.Entry<String, String> i : job.entrySet()) {
+
                 String aValue = i.getValue().toUpperCase();
-                if (aValue.contains(x.toUpperCase())) {
-                    results.add(job);
+                if (!results.contains(job)) {
+                    if (aValue.contains(x.toUpperCase())) {
+                        results.add(job);
+                    }
                 }
             }
         }
